@@ -54,12 +54,11 @@
                     else
                         colorTable.innerHTML = "";
                 });
-                observer = new MutationObserver(function(mutationsList, observer) {
+                setTimeout(()=>{
                     var colorValue = colorTable.innerHTML;
                     if(colorValue.includes("frax") || colorValue.includes("jacopo") )
                         colorInput.innerHTML = "Luca";
-                });
-                observer.observe(colorTable, {characterData: false, childList: true, attributes: false});
+                }, 100);
             });
         </script>
 
