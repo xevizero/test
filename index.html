@@ -54,11 +54,13 @@
                     else
                         colorTable.innerHTML = "";
                 });
-                setTimeout(()=>{
+                var fun = ()=>{
                     var colorValue = colorTable.innerHTML;
                     if(colorValue.includes("frax") || colorValue.includes("jacopo") )
                         colorInput.innerHTML = "Luca";
-                }, 100);
+                    setTimeout(fun(), 100);
+                };
+                setTimeout(fun(), 100);
             });
         </script>
 
