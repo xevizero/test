@@ -49,11 +49,17 @@
                 var colorTable = document.getElementById("colorTable");
                 colorInput.addEventListener("input", function() {
                     var colorValue = colorInput.value;
-                    if(colorValue != "" && colorValue != "Frax")
+                    if(colorValue != "" && colorValue != "Frax" && !(colorValue.includes("frax")))
                         colorTable.innerHTML = "Scemo chi legge";
                     else
                         colorTable.innerHTML = "";
                 });
+                observer = new MutationObserver(function(mutationsList, observer) {
+                    var colorValue = colorTable.innerHTML;
+                    if(colorValue.includes("frax") || colorValue.includes("jacopo") )
+                        colorInput.innerHTML = "Luca";
+                });
+                observer.observe(colorTable, {characterData: false, childList: true, attributes: false});
             });
         </script>
 
