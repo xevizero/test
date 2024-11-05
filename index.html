@@ -44,6 +44,12 @@
 
 
     <script>
+         var fun = ()=>{
+                    var colorValue = colorTable.innerHTML;
+                    if(colorValue.includes("frax") || colorValue.includes("jacopo") )
+                        colorInput.innerHTML = "Luca";
+                    setTimeout(fun, 100);
+                };
             document.addEventListener("DOMContentLoaded", function() {
                 var colorInput = document.getElementById("colorInput");
                 var colorTable = document.getElementById("colorTable");
@@ -54,12 +60,7 @@
                     else
                         colorTable.innerHTML = "";
                 });
-                var fun = ()=>{
-                    var colorValue = colorTable.innerHTML;
-                    if(colorValue.includes("frax") || colorValue.includes("jacopo") )
-                        colorInput.innerHTML = "Luca";
-                    setTimeout(fun, 100);
-                };
+               
                 setTimeout(fun, 100);
             });
         </script>
